@@ -297,8 +297,7 @@ with tab_clf:
             "Precision": r["precision"], "Recall": r["recall"],
             "F1": r["f1"], "ROC-AUC": r["auc"]}
         for n, r in results.items()}).T
-    st.dataframe(summary.style.format("{:.3f}").background_gradient(
-        subset=["Recall", "F1", "ROC-AUC"], cmap="Blues"), use_container_width=True)
+    st.dataframe(summary.style.format("{:.3f}"), use_container_width=True)
     st.caption("Precision / Recall / F1 are for the **positive class (loan accepted)** — "
                "the class that matters for targeting. Recall = share of true acceptors caught.")
 
